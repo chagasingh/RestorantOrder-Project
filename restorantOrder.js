@@ -27,7 +27,7 @@ getActivity()
 }
 
     function showUserOnScreen(myObj){
-        try{
+
         if(myObj.tableno==='TABLE 1'){
             const parentEle=document.getElementById('table 1')
             const childEle =document.createElement('li')
@@ -40,7 +40,7 @@ getActivity()
             deleteBtn.value='Cancel Order'
             deleteBtn.onclick=() => {
                 async function getActivity2(){
-                    
+                    try{
                         let respone=await axios.delete(`https://crudcrud.com/api/52e2ce87cbe740a78e77ed0599d0bedd/expencedata/${myObj._id}`)
                         parentEle.removeChild(childEle)
                         console.log(respone)
@@ -49,7 +49,7 @@ getActivity()
                     }
             
                 }getActivity2()
-            }
+            
 
                 //localStorage.removeItem(myObj.category)
                 
